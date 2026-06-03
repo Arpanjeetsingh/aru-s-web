@@ -1,3 +1,5 @@
+import TechStack from "./TechStack";
+
 const SKILL_GROUPS: Record<string, string[]> = {
   Languages: ["TypeScript", "JavaScript", "Python", "Go", "SQL"],
   Frontend: ["React", "Next.js", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
@@ -13,28 +15,32 @@ export default function Skills() {
       <div className="container">
         <div className="max-w-3xl mb-12">
           <p className="text-sm font-mono text-primary mb-2">02. Skills</p>
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Tech I reach for.
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Tech I reach for.</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {Object.entries(SKILL_GROUPS).map(([group, items]) => (
-            <div
-              key={group}
-              className="p-6 rounded-xl bg-card border border-border"
-            >
-              <h3 className="font-semibold mb-4 text-primary">{group}</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                {items.map((s) => (
-                  <li key={s} className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {Object.entries(SKILL_GROUPS).map(([group, items]) => (
+              <div
+                key={group}
+                className="p-6 rounded-xl bg-card border border-border"
+              >
+                <h3 className="font-semibold mb-4 text-primary">{group}</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  {items.map((s) => (
+                    <li key={s} className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="lg:col-span-1">
+            <TechStack />
+          </div>
         </div>
 
         <div

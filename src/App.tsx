@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
+import GitHubActivity from "./components/GitHubActivity";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
@@ -33,6 +34,19 @@ export default function App() {
         <About />
         <Skills />
         <Experience />
+        <section id="github" className="section-padding">
+          <div className="container max-w-5xl">
+            <div className="max-w-3xl mb-8">
+              <p className="text-sm font-mono text-primary mb-2">
+                04. Open Source
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                What I'm shipping.
+              </h2>
+            </div>
+            <GitHubActivity username="Arpanjeetsingh" />
+          </div>
+        </section>
         <Projects />
         <Education />
         <Contact />
